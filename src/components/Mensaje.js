@@ -11,17 +11,16 @@ class Mensaje extends Component {
 
     manejarSubmit = e => {
         var direccion;
+        var telefono
         e.preventDefault();
-        //this.calcularFormulaGeneral(8,-2,-3);
-        console.log(e);
+       
         //https://wa.me/526471164048?text=Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20del%20curso
-        direccion = 'https://wa.me/52'+this.state.telefono+'?text='+this.state.texto;    //=Texto';
-        document.location.href = direccion;
-        //console.log(direccion);
-        //this.calcularFormulaGeneral(this.state.a, this.state.b, this.state.c);
+        telefono = this.state.telefono.replace(/ /g, "");
+        console.log(telefono);
+        direccion = 'https://wa.me/52'+telefono+'?text='+this.state.texto;    //=Texto';
+        console.log(direccion);
+        //document.location.href = direccion;
         
-        //console.log(this.state.datos.a);
-        //alert('Valor de a: ' + this.state.datos.a);
     } 
 
     manejarCambios = e => {
@@ -38,7 +37,7 @@ class Mensaje extends Component {
             <form 
                 onSubmit={this.manejarSubmit}  
             >
-                <div class="container h-100">
+                <div className="container h-100">
                 <div className="form-group">                    
                     <label>Celular:</label>
                     <input 
