@@ -16,10 +16,10 @@ class Mensaje extends Component {
        
         //https://wa.me/526471164048?text=Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20del%20curso
         telefono = this.state.telefono.replace(/ /g, "");
-        console.log(telefono);
+        //console.log(telefono);
         direccion = 'https://wa.me/52'+telefono+'?text='+this.state.texto;    //=Texto';
-        console.log(direccion);
-        //document.location.href = direccion;
+        //console.log(direccion);
+        document.location.href = direccion;
         
     } 
 
